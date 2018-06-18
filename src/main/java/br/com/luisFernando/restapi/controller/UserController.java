@@ -58,8 +58,10 @@ public class UserController {
 	}
 
 	@DeleteMapping("/users/{id}")
-	public String delete(@PathVariable("id") Integer id) {
-		return "Deleted User: " + id.toString();
+	public User delete(@PathVariable("id") Long id) throws Exception {
+		User user = userRepository.getUser(id);
+		userRepository.removeUser(user);
+		return user;
 	}
 
 }

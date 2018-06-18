@@ -34,4 +34,8 @@ public class UserRepository {
 		throw new Exception("User not found");		
 	}
 	
+	public void removeUser(User user) throws Exception {		
+		users.remove(user);
+	}
+	
 }
